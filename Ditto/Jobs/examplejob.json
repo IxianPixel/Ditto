@@ -1,0 +1,27 @@
+﻿{
+    "sources": [
+        {
+            "name": "Source 1",
+            "source": "C:\\source1",
+            "destination": "source 1",
+            "folder_exceptions": ["DfsrPrivate"],
+            "file_exceptions": ["Thumbs.db", "thumbs.db", "Desktop.ini", "desktop.ini"]
+        },
+        {
+            "name": "Source 2",
+            "source": "C:\\source 2",
+            "destination": "source 2",
+            "folder_exceptions": [],
+            "file_exceptions": []
+        }
+    ],
+    "destination": "D:\\Destination",
+    "subject": "Ditto",
+    "smtp": "127.0.0.1",
+    "identify": false,
+    "job_name": "Ditto",
+    "sender": "sender@domain.tld",
+    "recipients": [
+        "recipient@domain.tld"
+    ]
+}
