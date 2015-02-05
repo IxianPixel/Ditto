@@ -23,12 +23,17 @@ namespace Ditto.Core
 
         public bool Compare()
         {
-            bool areEqual;
+            var filesAreEqual = false;
 
-            areEqual = this.DatesAreEqual();
-            areEqual = this.SizeIsEqual();
+            var datesAreEqual = this.DatesAreEqual();
+            var sizesAreEqual = this.SizeIsEqual();
 
-            return areEqual;
+            if (datesAreEqual && sizesAreEqual)
+            {
+                filesAreEqual = true;
+            }
+
+            return filesAreEqual;
         }
 
         private bool DatesAreEqual()

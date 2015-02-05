@@ -121,6 +121,11 @@ namespace Ditto.Core
                     Log.ErrorFormat("Cannot find directory {0}", currentDirectory); // TODO: Add to resources
                     continue;
                 }
+                catch (PathTooLongException)
+                {
+                    Log.ErrorFormat("Directory path {0} is too long, skipping", currentDirectory);
+                    continue;
+                }
                 
                 string[] files;
                 try
@@ -135,6 +140,11 @@ namespace Ditto.Core
                 catch (DirectoryNotFoundException)
                 {
                     Log.ErrorFormat("Cannot find directory {0}", currentDirectory); // TODO: Add to resources
+                    continue;
+                }
+                catch (PathTooLongException)
+                {
+                    Log.ErrorFormat("Directory path {0} is too long, skipping", currentDirectory);
                     continue;
                 }
 
@@ -307,11 +317,27 @@ namespace Ditto.Core
                 if (update)
                 {
                     File.Copy(source.FullName, destination.FullName, true);
+
+                    destination.CreationTime = source.CreationTime;
+                    destination.CreationTimeUtc = source.CreationTimeUtc;
+                    destination.LastWriteTime = source.LastWriteTime;
+                    destination.LastWriteTimeUtc = source.LastWriteTimeUtc;
+                    destination.LastAccessTime = source.LastAccessTime;
+                    destination.LastAccessTimeUtc = source.LastAccessTimeUtc;
+
                     this.mirrorInfo.FilesUpdated++;
                 }
                 else
                 {
                     File.Copy(source.FullName, destination.FullName);
+
+                    destination.CreationTime = source.CreationTime;
+                    destination.CreationTimeUtc = source.CreationTimeUtc;
+                    destination.LastWriteTime = source.LastWriteTime;
+                    destination.LastWriteTimeUtc = source.LastWriteTimeUtc;
+                    destination.LastAccessTime = source.LastAccessTime;
+                    destination.LastAccessTimeUtc = source.LastAccessTimeUtc;
+
                     this.mirrorInfo.FilesCreated++;
                 }
             }

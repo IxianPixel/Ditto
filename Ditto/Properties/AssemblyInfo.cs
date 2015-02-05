@@ -12,5 +12,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright (C) Dylan Addison 2014")]
 [assembly: ComVisible(false)]
 [assembly: Guid("95e2391c-c7af-46d8-a8db-ed7df137e838")]
-[assembly: AssemblyVersion("1.0.1")]
-[assembly: AssemblyFileVersion("1.0.1")]
+[assembly: AssemblyVersion("1.0.2")]
+[assembly: AssemblyFileVersion("1.0.2")]
+[assembly: AssemblyInformationalVersion("1.0.2e")]
