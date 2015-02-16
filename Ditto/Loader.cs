@@ -41,6 +41,8 @@ namespace Ditto
             {
                 InstanceJob.Start(args[0], args[1]);
             }
+
+            Maintenance.CleanupLogs();
         }
 
         static void InitializeLog()

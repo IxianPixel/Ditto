@@ -142,6 +142,16 @@ namespace Ditto.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Ditto {
+            get {
+                object obj = ResourceManager.GetObject("Ditto", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destination:  {0} Folders, {1} Files, {2}.
         /// </summary>
         internal static string EmailDestination {

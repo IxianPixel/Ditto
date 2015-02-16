@@ -45,6 +45,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Ditto.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaFS, Version=1.5.0.0, Culture=neutral, PublicKeyToken=4b76c8c88cc75802, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -60,6 +63,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -73,6 +77,7 @@
     <Compile Include="Core\FileComparer.cs" />
     <Compile Include="Core\InstanceJob.cs" />
     <Compile Include="Core\DetailedJob.cs" />
+    <Compile Include="Core\Maintenance.cs" />
     <Compile Include="Core\Mirror.cs" />
     <Compile Include="Model\JobDetails.cs" />
     <Compile Include="Model\JobSource.cs" />
@@ -101,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Lib\AlphaFS.dll" />
+    <None Include="Resources\Ditto.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
