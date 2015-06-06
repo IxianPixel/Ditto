@@ -16,6 +16,11 @@ namespace Ditto.Core
 
     using log4net;
 
+    using Directory = Alphaleonis.Win32.Filesystem.Directory;
+    using DirectoryInfo = Alphaleonis.Win32.Filesystem.DirectoryInfo;
+    using File = Alphaleonis.Win32.Filesystem.File;
+    using FileInfo = Alphaleonis.Win32.Filesystem.FileInfo;
+
     public class Mirror
     {
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mirror));
@@ -349,10 +354,6 @@ namespace Ditto.Core
             catch (ArgumentException)
             {
                 Log.ErrorFormat(Resources.FileCopyInvalidArg, source.FullName);
-            }
-            catch (PathTooLongException)
-            {
-                Log.ErrorFormat(Resources.FileCopyLength, source.FullName);
             }
             catch (DirectoryNotFoundException)
             {

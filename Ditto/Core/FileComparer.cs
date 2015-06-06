@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------
 namespace Ditto.Core
 {
-    using System.IO;
+    using Alphaleonis.Win32.Filesystem;
 
     public class FileComparer
     {
