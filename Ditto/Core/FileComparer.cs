@@ -38,19 +38,7 @@ namespace Ditto.Core
 
         private bool DatesAreEqual()
         {
-            var areEqual = true;
-
-            if (this.SourceFile.LastWriteTime != this.DestinationInfo.LastWriteTime)
-            {
-                areEqual = false;
-            }
-
-            if (this.SourceFile.CreationTime != this.DestinationInfo.CreationTime)
-            {
-                areEqual = false;
-            }
-
-            return areEqual;
+            return !(this.SourceFile.LastWriteTime != this.DestinationInfo.LastWriteTime);
         }
 
         private bool SizeIsEqual()
